@@ -1,2 +1,25 @@
-# StyleSync-AI
-StyleSync PRO AI 📸 Next-gen virtual hair studio by Dankwah Obed Asante. Features guided 360° facial mapping, real-time AR try-on, and dynamic web-fetching for styles. Adjust position, scale, and hair tint in a clean "Light Studio" UI. Built with Vanilla JS &amp; Canvas for high-fidelity photo downloads. Experience the future of hair!
+📸 StyleSync PRO AI
+
+Lead Developer: Dankwah Obed Asante
+
+🚀 Description
+
+A high-fidelity virtual hair studio featuring guided 360° facial mapping. Users can explore trending hairstyles via real-time AR overlays and dynamic web-fetching.
+
+✨ Features
+
+    Guided 360° Scan: Real-time instructions for Left, Right, and Forward head mapping.
+
+Precision AR Controls: Manual "Nudge" pads for hairstyle positioning and scaling.
+
+Studio Tools: Real-time lighting filters and experimental hair tinting.
+
+High-Fidelity Download: Custom canvas engine to save your new look as a PNG.
+
+🛠️ Tech Stack
+
+    Frontend: HTML5, CSS3 (Glassmorphism).
+
+Logic: Vanilla JavaScript (ES6+).
+
+Media: Navigator MediaDevices & HTML5 Canvas.
