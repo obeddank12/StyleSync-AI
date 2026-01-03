@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleSync AI | Ultra Studio 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="shutterSound" src="https://assets.mixkit.co/active_storage/sfx/700/700-preview.mp3"></audio>
+    <audio id="scanSound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
+
+    <nav>
+        <div class="logo">StyleSync <span>PRO AI</span></div>
+        <div class="nav-links">
+            <a href="#scanner">Studio</a>
+            <a href="about.txt" target="_blank">About Section</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">Next-Gen Beauty Tech</span>
+            <h1>The Future of Your Hair.</h1>
+            <p>Advanced head-mapping, web-sourced styles, and real-time AR try-on.</p>
+        </div>
+    </header>
+
+    <section id="scanner" class="scan-container">
+        <div class="scan-window" id="capture-area">
+            <video id="webcam" autoplay playsinline></video>
+            
+            <div id="face-guide" class="face-oval"></div>
+            
+            <div id="scanner-line" class="scan-line"></div>
+            
+            <img id="hair-overlay" src="" alt="Hair Overlay">
+
+            <div id="adj-controls" class="controls-overlay" style="display: none;">
+                <p>Position</p>
+                <div class="pad">
+                    <button onclick="adjustHair('top', -2)">↑</button>
+                    <div>
+                        <button onclick="adjustHair('left', -2)">←</button>
+                        <button onclick="adjustHair('left', 2)">→</button>
+                    </div>
+                    <button onclick="adjustHair('top', 2)">↓</button>
+                </div>
+                <p>Size</p>
+                <div class="pad">
+                    <button onclick="adjustHair('width', 5)">+</button>
+                    <button onclick="adjustHair('width', -5)">-</button>
+                </div>
+            </div>
+
+            <div id="camera-placeholder" class="glass-panel">
+                <h3>Configure Profile</h3>
+                
+                <div class="selector-group">
+                    <label>Gender</label>
+                    <div class="gender-selector">
+                        <button onclick="setGender('male')" id="btn-male" class="btn-opt">Male</button>
+                        <button onclick="setGender('female')" id="btn-female" class="btn-opt">Female</button>
+                    </div>
+                </div>
+
+                <div class="selector-group">
+                    <label>Preferred Vibe</label>
+                    <select id="vibe-select" class="modern-select">
+                        <option value="professional">Professional / Classic</option>
+                        <option value="trendy">Trendy / Modern</option>
+                        <option value="sporty">Sporty / Active</option>
+                    </select>
+                </div>
+
+                <button id="start-btn" onclick="startScan()" class="btn-scan" disabled>Unlock Magic Mirror</button>
+            </div>
+
+            <div id="scan-controls" class="action-bar" style="display: none;">
+                <button onclick="captureImage()" class="btn-capture">AI Scan</button>
+                <button onclick="resetScan()" class="btn-secondary">Reset</button>
+            </div>
+        </div>
+        
+        <div class="results-panel">
+            <div class="panel-header">
+                <h3>Studio Analysis</h3>
+                <span id="ai-status" class="status-dot"></span>
+            </div>
+            
+            <p id="statusText">Awaiting configuration...</p>
+            
+            <div class="filter-section">
+                <label>Studio Lighting (Filter)</label>
+                <input type="range" id="filter-slider" min="50" max="150" value="100" oninput="applyFilter()">
+            </div>
+
+            <div class="filter-section">
+                <label>Hair Tint (Experimental)</label>
+                <input type="color" id="hair-color" value="#ffffff" oninput="tintHair()">
+            </div>
+
+            <hr>
+            
+            <div id="recommendations"></div>
+
+            <div id="download-area" style="display:none;">
+                <button onclick="downloadResult()" class="btn-download">Download Look</button>
+            </div>
+
+            <canvas id="photo-canvas" style="display:none;"></canvas>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>StyleSync AI Studio</strong></p>
+        <p>Lead Developer: <strong>Dankwah Obed Asante</strong> </p>
+        <p>&copy; 2026 | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
